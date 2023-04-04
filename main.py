@@ -4,7 +4,7 @@ import openai
 from flask import Flask, redirect, render_template, request, url_for
 
 app = Flask(__name__)
-openai.api_key = "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"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 user = "How do I get good grades in Software Development"
 
@@ -19,7 +19,6 @@ def openAI():
         frequency_penalty=0,
         presence_penalty=0
 )
-    print(response)
     output = response['choices'][0]['text'].split("\n")
     return render_template("index.html", responses=output, user=user)
 
