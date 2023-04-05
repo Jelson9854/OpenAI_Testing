@@ -1,14 +1,12 @@
-import os
-
-import openai
+import os, openai, key
 from flask import Flask, redirect, render_template, request, url_for
 
 app = Flask(__name__)
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = key.OPENAI_API_KEY
 
-user = "How do I get good grades in Software Development"
+user = "Name 5 animals"
 
-@app.route("/")
+@app.route("/", methods=("GET", "POST"))
 def openAI():
     response = openai.Completion.create(
         model="text-davinci-003",
