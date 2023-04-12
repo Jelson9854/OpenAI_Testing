@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>OpenAI Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='web.css') }}" />
 </head>
 <body>
-    Here is the response from OpenAI for the prompt "{{user}}":
-    {% for response in responses: %}
-    <br>
-    {{response}}
-    {%endfor%}
+    <h3>Give a prompt to OpenAI</h3>
+    <form action="/" method="post">
+        <input type="text" name="user" placeholder="Enter a prompt" required />
+        <input type="submit" >
+    </form>
+    {% if result %}
+    <div class="result">{{result}}</div>
+    {% endif %}
 </body>
 </html>
