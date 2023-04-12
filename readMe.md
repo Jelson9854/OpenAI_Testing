@@ -1,12 +1,18 @@
 Testing for OpenAI research project
 
-Currently creates a response for user generated prompt in main.py
+Currently creates a web browser where the user can input a prompt for OpenAI to respond
 
 TODO:
-Integrate flask to prompt user for prompt
+
+1. Find a way to save previous prompts
+
+2. Find a way to do delayed response thing that ChatGPT does
 
 
 Initialization:
-Clone the repository
-Pip install requirements.txt to get dependencies
-run main.py
+
+1. Clone the repository and create a virtual environment
+
+2. Pip install requirements.txt to get dependencies
+
+3. run main.py
